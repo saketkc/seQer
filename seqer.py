@@ -5,6 +5,15 @@ Run pipelines, cleanly
 
 import subprocess
 import ConfigParser
+import io
+
+class RawConfigParser:
+    def __init__(self, location):
+        self.config = ConfigParser.RawConfigParser(allow_no_value=True)
+        self.config.readfp(io.BytesIO(location))
+
+    def get_section(self, section):
+        return self.config.get(section, section)
 
 
 class Subprocessor:
