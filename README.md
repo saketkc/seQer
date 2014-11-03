@@ -1,4 +1,4 @@
 seQer
 =====
 
--Seq Profiler
+*-Seq Profiler
